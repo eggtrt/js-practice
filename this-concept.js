@@ -19,3 +19,12 @@ function foo () {
 }
 
 baz(); // baz의 호출부
+
+// this 바인딩의 규칙
+
+// 1. 기본 바인딩
+function foo () {
+    console.log(this.a);
+}
+var a = 2;
+foo();
