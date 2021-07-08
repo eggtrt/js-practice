@@ -59,4 +59,13 @@ var a = "전역 변수";
 bar();
 
 // 3 명시적 바인딩
+function foo () {
+    console.log(this.a);
+}
+
+var obj = {
+    a: 2
+};
+foo.call(obj); // call을 사용하므로써 this에 obj를 명시적으로 바인딩
+// 객체 대신 string, boolean, number등을 넣으면 new String 등으로 래핑되는데 이를 박싱이라고 한다
 
