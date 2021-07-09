@@ -70,4 +70,27 @@ foo.call(obj); // call을 사용하므로써 this에 obj를 명시적으로 바�
 // 객체 대신 string, boolean, number등을 넣으면 new String 등으로 래핑되는데 이를 박싱이라고 한다
 
 // 3-2 하드 바인딩
-        
+function foo () { 
+    console.log(this.a);
+}
+var obj = {
+    a: 2
+};
+
+var bar = function () {
+    foo.call(obj);
+}
+bar(); // 2
+setTimeout(bar, 100);
+bar.call(window); // 2
+
+//bar 내부에 foo.call(obj)로 foo를 호출하여 obj를 this에 강제 바인딩하도록 하드코딩
+
+// 4 new 바인딩
+
+function foo (a) {
+    this.a = a;
+}
+
+var bar = new foo(); // new를 통해 객체 생성시, bar는 foo함수의 this에 바인딩 된다
+console.log(bar.a);
