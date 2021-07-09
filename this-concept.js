@@ -69,3 +69,5 @@ var obj = {
 foo.call(obj); // call을 사용하므로써 this에 obj를 명시적으로 바인딩
 // 객체 대신 string, boolean, number등을 넣으면 new String 등으로 래핑되는데 이를 박싱이라고 한다
 
+// 3-2 하드 바인딩
+        
