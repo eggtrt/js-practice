@@ -104,3 +104,20 @@ var bar = foo.call(obj);
 // 3. 함수를 콘텍스트(객체를 소유, 포함)형태로 호출? -> 콘텍스트 객체가 this
 var bar = obj1.foo();
 //  4. 그 외 경우 this는 기본 값(전역 객체)
+
+// 바인딩 예외
+
+// 2.4.1 this 무시
+
+// call, appluy, bind 메서드에 첫번째 인자로 null, undefined를 넘기면 기본 바인딩 적용
+function foo() {
+    console.log(this.a);
+}
+
+var a = 2;
+ 
+foo.call(null);
+
+foo.apply(null, [2, 3]) // 2와 3이 각각 한번씩 들어간다
+
+// null을 전달하는것이 위험할 수 있으므로 Object.create(null) 사용 권장
