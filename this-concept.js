@@ -88,9 +88,19 @@ bar.call(window); // 2
 
 // 4 new 바인딩
 
-function foo (a) {
+function foo(a) {
     this.a = a;
 }
 
 var bar = new foo(); // new를 통해 객체 생성시, bar는 foo함수의 this에 바인딩 된다
 console.log(bar.a);
+
+// 순서대로 적용하기
+
+// 1. new로 함수를 호출했는지? -> 새로 생성된 객체가 this
+var bar = new foo();
+// 2. call과 apply로 함수를 호출? -> 명시적으로 지정된 객체가 this
+var bar = foo.call(obj);
+// 3. 함수를 콘텍스트(객체를 소유, 포함)형태로 호출? -> 콘텍스트 객체가 this
+var bar = obj1.foo();
+//  4. 그 외 경우 this는 기본 값(전역 객체)
