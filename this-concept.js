@@ -132,3 +132,21 @@ var p = { a: 4 };
 
 o.foo(); // 3
 (p.foo = o.foo)(); // 2
+
+// 2.5 어휘적 this
+
+// arrow function에서의 this
+function foo() {
+    return (a) => {
+        console.log(this.a);
+    }
+}
+
+var obj1 = {
+    a: 2
+};
+var obj2 = {
+    a: 3
+};
+var bar = foo.call(obj1); // 2
+bar.call(obj2) // 2 -> arrow fuinctino의 this는 override 되지 않는다
