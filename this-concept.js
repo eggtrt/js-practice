@@ -121,3 +121,14 @@ foo.call(null);
 foo.apply(null, [2, 3]) // 2와 3이 각각 한번씩 들어간다
 
 // null을 전달하는것이 위험할 수 있으므로 Object.create(null) 사용 권장
+
+// 2.4.2 간접 레퍼런스
+function foo() {
+    console.log(this.a);
+}
+var a = 2;
+var o = { a: 3, foo };
+var p = { a: 4 };
+
+o.foo(); // 3
+(p.foo = o.foo)(); // 2
