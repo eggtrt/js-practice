@@ -47,3 +47,11 @@ var myObject = {
 foo;
 someFoo;
 myObject.someFoo;
+
+// 3.3.3 배열
+
+var myArray = ["foo", 42, "bar"];
+// 인덱싱을 통해 위치 저장
+// 객체처럼 키값을 사용할수도 있지만 권장되진 않음
+
+myArray.baz = "baz";
