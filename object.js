@@ -33,3 +33,17 @@ var myObject =  {
     [prefix + "baz"]: "world" 
 }
 
+// 3.3.2 프로퍼티 vs 메서드
+
+function foo() {
+    console.log("foo");
+}
+
+var someFoo = foo;
+
+var myObject = {
+    someFoo: foo
+}
+foo;
+someFoo;
+myObject.someFoo;
