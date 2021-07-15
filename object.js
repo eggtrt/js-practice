@@ -61,3 +61,16 @@ myArray.baz = "baz";
 // 얕은 복사 -> 레퍼런스는 완벽하게 복사되지 않음
 Object.assign({}, myObject);
 // 깊은 복사 -> 레퍼런스까지 완벽하게 복사됨 
+
+// 3.3.5 프로퍼티 서술자
+
+var myObject = {};
+Object.defineProperty(myObject, "a", {
+    value: 2,
+    writable: false, //
+    configurable: true, // 설정 가능
+    enumerable: true // 열거 가능성
+})
+
+myObject.a = 3;
+myObject.a; // 2
