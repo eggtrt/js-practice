@@ -74,3 +74,14 @@ Object.defineProperty(myObject, "a", {
 
 myObject.a = 3;
 myObject.a; // 2
+
+// 3.3.6 불변성
+ 
+// writable과 configurable을 둘 다 false로 하면 객체 상수를 만들 수 있다
+// 확장 금지
+Object.preventExtensions(myObject);
+myObject.b = 3;
+myObject.b // undefined
+
+Object.seal() // Object.preventExtensions(myObject) + configurable: false
+Object.freeze() // Object.seal + writable: false
