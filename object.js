@@ -85,3 +85,10 @@ myObject.b // undefined
 
 Object.seal() // Object.preventExtensions(myObject) + configurable: false
 Object.freeze() // Object.seal + writable: false
+
+// 3.3.7 [[Get]]
+
+// 실제로 프로퍼티에 접근하면 [[Get]]() 함수가 호출된다
+// 알고리즘에 따라서 값을 찾을 수 없으면 undefined가 반환된다
+
+
