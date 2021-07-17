@@ -95,3 +95,26 @@ Object.freeze() // Object.seal + writable: false
 
 // 객체에 프로퍼티가 존재하는지 확인
 // 존재하는지에 따라 에러를 띄우거나 값을 세팅한다
+
+// 3.3.9 게터와 세터
+
+var myObject = {
+    get a() {
+        return 2;
+    },
+    set a(val) {
+        this._a = val * 2;
+    }
+}
+
+Object.defineProperty(
+    myObject,
+    "b",
+    {
+        get: function() { return this.a *2 },
+        enumerable: true
+    }
+)
+
+myObject.a; // 2
+myObject.b; // 4
