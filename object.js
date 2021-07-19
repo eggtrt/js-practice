@@ -118,3 +118,18 @@ Object.defineProperty(
 
 myObject.a; // 2
 myObject.b; // 4
+
+// 3.3.10 존재 확인
+
+var myObject = {
+    a:2
+};
+("a" in myObject)
+myObject.hasOwnProperty("a");
+
+Object.defineProperty(
+    myObject,
+    "b",
+    { enumerable: false, value: 3 }
+)
+myObject.propertyIsEnumerable("b"); // false
