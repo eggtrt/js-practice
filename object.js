@@ -133,3 +133,24 @@ Object.defineProperty(
     { enumerable: false, value: 3 }
 )
 myObject.propertyIsEnumerable("b"); // false
+
+// 3.4 순회
+
+var myArray = [1, 2, 3];
+for (var i = 0; i < myArray.length; i++) {
+    console.log(myArray[i]);
+}
+// 1 2 3
+
+var myArray = [1, 2, 3];
+for (var v of myArray) {
+    console.log(v);
+}
+// 1 2 3
+
+var it = myArray[Symbol.iterator]();
+
+it.next(); // { value: 1, done: false }
+it.next(); // { value: 2, done: false }
+it.next(); // { value: 3, done: false }
+it.next(); // { done: true }
