@@ -68,3 +68,26 @@ var Car = mixin(Vehicle, {
         )
     }
 })
+
+// 4.4.1 암시적 믹스인
+
+var Something = {
+    cool: function() {
+        this.greeting = "Hello world";
+        this.count = this.count ? this.count + 1 : 1;
+    }
+};
+
+Something.cool();
+Something.greeting;
+Something.count;
+
+var Another = {
+    cool: function() {
+        Something.cool.call(this);
+    }
+}
+
+Another.cool();
+Another.greeting;
+Another.count; // 공유되지 않음
