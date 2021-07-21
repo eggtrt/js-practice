@@ -35,3 +35,36 @@ class Car extends Vehicle {
         ouput(wheels, "개의 바퀴로 굴러간다")
     }
 }
+
+// 4.4 믹스인
+
+function mixin(sourceObj, targetObj) {
+    for (var key in sourceObj) {
+        if (!(key in targetObj)) {
+            targetObj[key] = sourceObj[key]
+        }
+
+    return targetObj    
+    }
+}
+
+var Vehicle = {
+    engines: 1,
+    ignition: function() {
+        console.log("엔진을 켠다")
+    },
+    drive: function() {
+        this.ignition();
+        console.log("방향을 맞추고 앞으로간다")
+    }
+};
+
+var Car = mixin(Vehicle, {
+    wheels: 4,
+    drive: function() {
+        Vehicle.drive.call(this);
+        console.log(
+            this.wheels + "개의 바퀴로 굴러간다!"
+        )
+    }
+})
