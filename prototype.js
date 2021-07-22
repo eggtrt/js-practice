@@ -12,3 +12,20 @@ for (var k in myObject) {
 
 ("a" in myObject) // true
 
+// 5.1 생성자
+
+function Foo () {
+    //
+}
+
+Foo.prototype.constructor === Foo; //true
+
+var a = new Foo();
+a.constructor === Foo; // true
+
+function NothingSpecial () {
+    console.log('whaaat');
+}
+
+var a = new NothingSpecial();
+a; // {}
