@@ -29,3 +29,12 @@ function NothingSpecial () {
 
 var a = new NothingSpecial();
 a; // {}
+
+// 5.2 체계
+
+Object.defineProperty(Foo.prototype, "constructor", {
+    enumerable: true,
+    writable: true,
+    configurable: false,
+    value: Foo // Constructor가 Foo를 가리키게 함
+})
