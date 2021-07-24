@@ -63,3 +63,15 @@ var a = new Bar("a", "obj a");
 
 a.myName(); // "a"
 a.myLabel() // "obj a"
+
+// 5.3.1 클래스 관계 조사
+
+function isRelatedTo(o1,o2) {
+    function F() {}
+        F.prototype = o2;
+        return o1 instanceof F;
+}
+
+var a= {};
+var b = Object.create('a');
+isRelatedTo(b,a); // true
