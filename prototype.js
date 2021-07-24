@@ -75,3 +75,22 @@ function isRelatedTo(o1,o2) {
 var a= {};
 var b = Object.create('a');
 isRelatedTo(b,a); // true
+
+// 5.4 링크
+
+var foo = {
+    something: function() {
+        console.log("안녕");
+    }
+}
+
+var bar = Object.create(foo);
+bar.something();
+
+if (!Object.create) {
+    Object.create = function(o) {
+        function F() {}
+        F.prototype = o;
+        return new F();
+    }
+}
