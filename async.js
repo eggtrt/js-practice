@@ -18,3 +18,20 @@ function later () {
 
 var answer = now();
 setTimeout(later, 1000); // 42
+
+// 이벤트 루프
+
+var eventLoop = [];
+var event;
+
+while (true) {
+    if (eventLoop.length > 0) {
+        event = eventLoop.shift();
+        try {
+            event();
+        } catch (error) {
+            reportError(error);
+        }
+    }
+}
+
