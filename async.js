@@ -35,3 +35,16 @@ while (true) {
     }
 }
 
+// 병렬 스레딩
+
+var a = 20;
+function foo() {
+    a = a + 1;
+}
+
+function bar() {
+    a = a * 2;
+}
+
+ajax("주소1", foo);
+ajax("주소2", bar);
