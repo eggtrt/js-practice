@@ -48,3 +48,22 @@ function bar() {
 
 ajax("주소1", foo);
 ajax("주소2", bar);
+
+// 완전 - 실행
+
+var a= 1;
+var b= 2;
+
+function foo () {
+    a++;
+    b= b*a;
+    a = b + 3;
+}
+
+function bar() {
+    b--;
+    a = 8 + b;
+    b = a * 2;
+}
+ajax("주소1", foo);
+ajax("주소2", bar);
