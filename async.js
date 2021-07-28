@@ -67,3 +67,16 @@ function bar() {
 }
 ajax("주소1", foo);
 ajax("주소2", bar);
+
+// 협동적 동시성
+
+var res = [];
+
+//response는 배열을 받음
+function response(data) {
+    res =res.concat(
+        data.map(function(val) {
+            return val *2;
+        })
+    )
+}
