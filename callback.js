@@ -11,3 +11,21 @@ ListeningStateChangedEvent("click", function handler(evt) {
         })
     }, 500);
 })
+
+// 중첩 없이
+
+listen("click", handler);
+
+function handler() {
+    setTimeout(request, 500);
+}
+
+function request() {
+    ajax("", response);
+}
+
+function response(text) {
+    if (text == "hello") {
+        handler();
+    }
+}
