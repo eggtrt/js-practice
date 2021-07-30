@@ -18,4 +18,16 @@ function add(getX, getY, cb) {
 
 add(fetchX,fetchY, function(sum) {
     console.log(sum);
-})
+});
+
+// 이벤트
+
+function foo(x) {
+    return new Promise(function(resolve, reject) {
+        // resolve와 reject중 하나를 호출하게 되고 콜백 함수 역할을 한다
+    })
+}
+
+var p = foo(42);
+bar(p);
+baz(p);
