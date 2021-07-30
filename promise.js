@@ -31,3 +31,18 @@ function foo(x) {
 var p = foo(42);
 bar(p);
 baz(p);
+
+// 덕 타이핑
+
+if (
+    p !== null &&
+    (
+        typeof p === "object" ||
+        typeof p === "function"
+    ) &&
+    typeof p.then === "function"
+) {
+    // 데너블로 간주
+} else {
+    //데너블이 아니다
+}
