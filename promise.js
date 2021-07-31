@@ -67,3 +67,14 @@ p1.then((v) => {
 p2.then((v) => {
     console.log(v);
 })
+
+// 에러 삼키기
+
+var p = new Promise((resolve, reject ) => {
+    foo.bar();
+    resolve(42);
+})
+
+p.then(() => {}, (err) => {
+    //error는 TypeError 예외 객체가 나옴
+})
