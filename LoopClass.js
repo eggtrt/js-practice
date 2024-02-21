@@ -2,8 +2,8 @@ var LoopClass = /** @class */ (function () {
     function LoopClass() {
         this.bonusGames = [];
         this.bonusGames = [1, 2, 3, 4, 5];
-        // this.loopGames();
-        this.loopGamesByFor();
+        this.loopGames();
+        // this.loopGamesByFor();
     }
     LoopClass.prototype.setBonusGame = function (bonusGames) {
         this.bonusGames = bonusGames;
@@ -16,7 +16,7 @@ var LoopClass = /** @class */ (function () {
             var bonusGame = _a[_i];
             console.log('this.bonusGames : ', this.bonusGames);
             console.log('bonusGame : ', bonusGame);
-            if (bonusGame === 4) {
+            if (bonusGame === 3) {
                 console.log('push!');
                 this.setBonusGame([1, 2, 3, 4, 5, 6]);
             }
